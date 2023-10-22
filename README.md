@@ -1,66 +1,56 @@
-## Foundry
+# Provably Random Lottery Raffle Contracts
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+## Table of Contents
 
-Foundry consists of:
+1. [About](https://chat.openai.com/c/915f2107-372f-4183-b166-445b2c50cbd6#about)
+2. [Features](https://chat.openai.com/c/915f2107-372f-4183-b166-445b2c50cbd6#features)
+3. [Technologies](https://chat.openai.com/c/915f2107-372f-4183-b166-445b2c50cbd6#technologies)
+4. [Tests](https://chat.openai.com/c/915f2107-372f-4183-b166-445b2c50cbd6#tests)
+5. [Contributing](https://chat.openai.com/c/915f2107-372f-4183-b166-445b2c50cbd6#contributing)
+6. [License](https://chat.openai.com/c/915f2107-372f-4183-b166-445b2c50cbd6#license)
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+## About
 
-## Documentation
+This repository contains the code for a blockchain-based lottery system that is both transparent and provably random. Utilizing Solidity for smart contracts and Chainlink technologies for randomness and automation, this lottery platform aims to be fair, automated, and fully decentralized.
 
-https://book.getfoundry.sh/
+## Features
 
-## Usage
+### User Interaction
 
-### Build
+1. **Enter the Lottery**: Users can enter the lottery by purchasing a ticket. The fees for the tickets are stored in a smart contract and are distributed to the winner after the draw.
 
-```shell
-$ forge build
-```
+### Automation and Randomness
 
-### Test
+2. **Automatic Drawing**: After a predefined period (`X`), the lottery will automatically select a winner programmatically.
+3. **Provably Random**: Utilizes Chainlink VRF (Verifiable Random Function) to ensure that the lottery draw is random and verifiable.
+4. **Time-Based Trigger**: Uses Chainlink Automation for time-based triggering of the lottery draw.
 
-```shell
-$ forge test
-```
+## Technologies
 
-### Format
+- Foundry: IDE.
+- Solidity: For writing Ethereum-based smart contracts.
+- Chainlink VRF: For generating a provably random number for the lottery draw.
+- Chainlink Automation: For time-based triggering of the lottery draw.
 
-```shell
-$ forge fmt
-```
+## Tests
 
-### Gas Snapshots
+### Included Test Scripts
 
-```shell
-$ forge snapshot
-```
+1. **Deploy Scripts**: Automated scripts for deploying the contracts.
+2. **Unit Tests**: Tests that cover individual components of the contracts.
+3. **Integration Tests**: Tests that cover the interaction between the contracts.
+4. **Forked Tests**: Ability to run tests on:
+    - Local chain
+    - Forked Testnet
+    - Forked Mainnet
 
-### Anvil
+Run the tests using Foundry:
+`$ foundry test`
 
-```shell
-$ anvil
-```
+## Contributing
 
-### Deploy
+Feel free to dive in! Open an issue or submit PRs.
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
+## License
 
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+This project is licensed under the MIT License.
